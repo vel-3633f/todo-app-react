@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({ createTodo, todos,setTodos }) => {
+const Form = ({ createTodo, todos, setTodos }) => {
   const [enteredTodo, setEnterTodo] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -21,13 +21,11 @@ const Form = ({ createTodo, todos,setTodos }) => {
 
   const deleteTodo = () => {
     const filterTodos = todos.filter((todo) => {
-      return !todo.completed
-    })
-  console.log(filterTodos)
-    setTodos(filterTodos)
-  }
-
-  
+      return !todo.completed;
+    });
+    console.log(filterTodos);
+    setTodos(filterTodos);
+  };
 
   return (
     <>
@@ -35,11 +33,24 @@ const Form = ({ createTodo, todos,setTodos }) => {
         type="text"
         value={enteredTodo}
         onChange={(e) => setEnterTodo(e.target.value)}
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-4/5 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="タスクを入力してください"
       />
-      <button onClick={addTodo}>タスクを追加する</button>
-      <button onClick={deleteTodo}>完了したタスクを削除</button>
-      <p>{errorMsg}</p>
-      <div>残りのタスク:{todos.length}</div>
+      <p className="text-red-600">{errorMsg}</p>
+      <button
+        onClick={addTodo}
+        className="bg-blue-400 hover:bg-blue-300 text-white rounded px-4 py-2 my-5"
+      >
+        タスクを追加する
+      </button>
+      <button
+        onClick={deleteTodo}
+        className="bg-red-400 hover:bg-red-300 text-white rounded px-4 py-2"
+      >
+        完了したタスクを削除
+      </button>
+
+      <div className="text-gray-500 mb-5">残りのタスク:{todos.length}</div>
     </>
   );
 };

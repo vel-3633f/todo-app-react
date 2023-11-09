@@ -8,7 +8,7 @@ const List = ({ todos,toggleTodo }) => {
   // setTodos(newTodos);
 
   return (
-    <div>
+    <div className="w-4/5">
       {todos.map((todo) => {
         return <Todo todo={todo} key={todo.id} toggleTodo={toggleTodo} />;
       })}

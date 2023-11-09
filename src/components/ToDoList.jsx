@@ -23,17 +23,19 @@ const ToDoList = () => {
 
   const toggleTodo = (id) => {
     const newTodos = [...todos];
-    const todo = newTodos.find((todo) => todo.id === id)
+    const todo = newTodos.find((todo) => todo.id === id);
     //クリックしたら、todo.completedが反転。チェックしているはtodo.completedの値次第。
     todo.completed = !todo.completed;
     setTodos(newTodos);
   };
 
   return (
-    <div>
-      <h1>ToDoアプリ</h1>
+    <div className="w-72 h-4/5 border border-black rounded-md">
+      <h1 className="bg-blue-500 text-white h-20 text-3xl flex items-center justify-center">Todo App</h1>
+      <div className="flex items-center flex-col py-6">
       <Form createTodo={createTodo} todos={todos} setTodos={setTodos} />
       <List todos={todos} setTodos={setTodos} toggleTodo={toggleTodo} />
+      </div>
     </div>
   );
 };
