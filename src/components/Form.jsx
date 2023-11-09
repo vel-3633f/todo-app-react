@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({ createTodo, todos, setTodos }) => {
+const Form = ({ createTodo, todos, setTodos, count}) => {
   const [enteredTodo, setEnterTodo] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -50,7 +50,7 @@ const Form = ({ createTodo, todos, setTodos }) => {
         完了したタスクを削除
       </button>
 
-      <div className="text-gray-500 mb-5">残りのタスク:{todos.length}</div>
+      <div className="text-gray-500 mb-5">残りのタスク:{count}</div>
     </>
   );
 };
