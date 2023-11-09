@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({ createTodo, todos, setTodos, count}) => {
+const Form = ({ createTodo, todos, setTodos, count,countCheck}) => {
   const [enteredTodo, setEnterTodo] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -11,6 +11,7 @@ const Form = ({ createTodo, todos, setTodos, count}) => {
         content: enteredTodo,
         completed: false,
       };
+      countCheck()
       createTodo(newTodo);
       setEnterTodo("");
       setErrorMsg("");
