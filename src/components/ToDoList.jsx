@@ -30,7 +30,7 @@ const ToDoList = () => {
   };
 
   return (
-    <div className="w-72 h-4/5 border border-black rounded-md">
+    <div className="w-72 sm:w-80 h-4/5 border border-black rounded-md">
       <h1 className="bg-blue-500 text-white h-20 text-3xl flex items-center justify-center">Todo App</h1>
       <div className="flex items-center flex-col py-6">
       <Form createTodo={createTodo} todos={todos} setTodos={setTodos} />

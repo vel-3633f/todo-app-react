@@ -39,7 +39,7 @@ const Form = ({ createTodo, todos, setTodos }) => {
       <p className="text-red-600">{errorMsg}</p>
       <button
         onClick={addTodo}
-        className="bg-blue-400 hover:bg-blue-300 text-white rounded px-4 py-2 my-5"
+        className="bg-blue-400 hover:bg-blue-300 text-white rounded px-4 py-2 my-3"
       >
         タスクを追加する
       </button>
